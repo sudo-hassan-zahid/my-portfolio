@@ -273,7 +273,9 @@ export default function Home() {
     <main className="site-shell min-h-screen text-[color:var(--foreground)]">
       <header className="site-nav">
         <a className="brand-lockup" href="#top" aria-label="Hassan Zahid home">
-          <span className="brand-mark">HZ</span>
+          <span className="brand-mark" aria-hidden="true">
+            <span>HZ</span>
+          </span>
           <span>
             <strong>Hassan Zahid</strong>
             <small>Backend-first software engineer</small>
