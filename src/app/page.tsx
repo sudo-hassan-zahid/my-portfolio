@@ -404,14 +404,8 @@ export default function Home() {
         </div>
 
         <div className="experience-list">
-          {companyExperience.map((item) => {
-            const roleSkillCount = item.categories.reduce(
-              (total, category) => total + category.skills.length,
-              0,
-            );
-
-            return (
-              <article key={item.id} className="experience-stage">
+          {companyExperience.map((item) => (
+            <article key={item.id} className="experience-stage">
                 <div className="experience-heading">
                   <div>
                     <p className="eyebrow">{item.signal}</p>
@@ -421,10 +415,6 @@ export default function Home() {
                     <span>
                       {item.location} | {item.period}
                     </span>
-                  </div>
-                  <div className="skill-count">
-                    <strong>{roleSkillCount}</strong>
-                    <span>role-linked skills</span>
                   </div>
                 </div>
 
@@ -455,8 +445,7 @@ export default function Home() {
                   ))}
                 </div>
               </article>
-            );
-          })}
+          ))}
         </div>
       </section>
 
@@ -479,7 +468,6 @@ export default function Home() {
                 onClick={() => setActiveSkillTitle(group.title)}
               >
                 <span>{group.title}</span>
-                <small>{group.skills.length} skills</small>
               </button>
             ))}
           </div>
@@ -501,7 +489,6 @@ export default function Home() {
             <details key={group.title} className="skill-accordion" open>
               <summary>
                 <span>{group.title}</span>
-                <small>{group.skills.length} skills</small>
               </summary>
               <p>{group.summary}</p>
               <div>

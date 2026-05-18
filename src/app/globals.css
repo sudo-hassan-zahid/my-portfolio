@@ -545,30 +545,6 @@ a {
   color: var(--muted);
 }
 
-.skill-count {
-  min-width: 130px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 14px;
-  text-align: center;
-}
-
-.skill-count strong,
-.skill-count span {
-  display: block;
-}
-
-.skill-count strong {
-  font-family: var(--font-space-grotesk), Arial, sans-serif;
-  font-size: 2rem;
-}
-
-.skill-count span {
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.35;
-}
-
 .experience-overview {
   margin: 22px 0 0;
   font-size: 1.02rem;
@@ -651,21 +627,13 @@ a {
   color: var(--panel-text);
 }
 
-.skill-tabs span,
-.skill-tabs small {
+.skill-tabs span {
   display: block;
 }
 
 .skill-tabs span {
   font-family: var(--font-space-grotesk), Arial, sans-serif;
   font-weight: 800;
-}
-
-.skill-tabs small {
-  margin-top: 6px;
-  color: currentColor;
-  font-size: 0.78rem;
-  opacity: 0.7;
 }
 
 .skill-spotlight {
@@ -760,13 +728,6 @@ a {
 
 .skill-accordion[open] summary::after {
   content: "-";
-}
-
-.skill-accordion small {
-  color: var(--muted);
-  font-family: var(--font-manrope), Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
 }
 
 .skill-accordion p {
@@ -980,10 +941,6 @@ a {
 
   .experience-heading {
     display: grid;
-  }
-
-  .skill-count {
-    width: 100%;
   }
 
   .contact-section {
