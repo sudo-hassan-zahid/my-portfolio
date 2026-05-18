@@ -348,14 +348,36 @@ a {
 }
 
 .profile-panel {
+  position: relative;
   display: grid;
   gap: 16px;
   border: 1px solid rgba(248, 250, 242, 0.12);
   border-radius: 8px;
-  background: var(--ink-panel);
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(19, 32, 29, 0.98), rgba(9, 45, 42, 0.98)),
+    #13201d;
   color: var(--panel-text);
   box-shadow: var(--shadow);
   padding: 22px;
+}
+
+.profile-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(248, 250, 242, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(248, 250, 242, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0.55;
+}
+
+.profile-panel > * {
+  position: relative;
+  z-index: 1;
 }
 
 .panel-topline,
