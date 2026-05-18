@@ -408,17 +408,20 @@ a {
 }
 
 .proof-grid,
+.role-fit-grid,
 .soft-skill-board,
 .signal-list {
   display: grid;
   gap: 14px;
 }
 
-.proof-grid {
+.proof-grid,
+.role-fit-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .proof-card,
+.role-fit-grid article,
 .skill-accordion,
 .soft-skill-board article,
 .signal-list p,
@@ -438,13 +441,28 @@ a {
     box-shadow 180ms ease;
 }
 
-.proof-card:hover {
+.role-fit-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.role-fit-grid article {
+  min-height: 260px;
+  padding: 20px;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.proof-card:hover,
+.role-fit-grid article:hover {
   transform: translateY(-4px);
   border-color: rgba(15, 118, 110, 0.32);
   box-shadow: 0 16px 34px rgba(20, 35, 31, 0.1);
 }
 
 .proof-card h3,
+.role-fit-grid h3,
 .soft-skill-board h3,
 .skill-column h4 {
   margin: 0;
@@ -453,10 +471,18 @@ a {
   font-weight: 800;
 }
 
-.proof-card p {
+.proof-card p,
+.role-fit-grid p {
   margin: 18px 0 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.role-fit-grid div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
 }
 
 .experience-grid {
@@ -696,6 +722,7 @@ a {
 .skill-column span,
 .skill-accordion div span,
 .skill-spotlight span,
+.role-fit-grid span,
 .soft-row span,
 .soft-skill-board span {
   border: 1px solid rgba(15, 118, 110, 0.18);
@@ -890,6 +917,7 @@ a {
   }
 
   .proof-grid,
+  .role-fit-grid,
   .soft-skill-board,
   .signal-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -947,6 +975,7 @@ a {
   .skill-command,
   .stat-strip,
   .proof-grid,
+  .role-fit-grid,
   .company-skill-grid,
   .skill-matrix,
   .soft-skill-board,
