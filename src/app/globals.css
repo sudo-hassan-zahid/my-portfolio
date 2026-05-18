@@ -609,8 +609,93 @@ a {
   margin-bottom: 12px;
 }
 
+.skill-command {
+  display: grid;
+  grid-template-columns: 0.42fr 0.58fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.skill-tabs {
+  display: grid;
+  gap: 8px;
+}
+
+.skill-tabs button {
+  cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 247, 0.78);
+  padding: 14px 16px;
+  text-align: left;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.skill-tabs button:hover,
+.skill-tabs button:focus-visible {
+  transform: translateX(4px);
+  border-color: rgba(15, 118, 110, 0.34);
+}
+
+.skill-tabs button.active {
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+  color: var(--panel-text);
+}
+
+.skill-tabs span,
+.skill-tabs small {
+  display: block;
+}
+
+.skill-tabs span {
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+  font-weight: 800;
+}
+
+.skill-tabs small {
+  margin-top: 6px;
+  color: currentColor;
+  font-size: 0.78rem;
+  opacity: 0.7;
+}
+
+.skill-spotlight {
+  min-height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 24px;
+  box-shadow: 0 10px 26px rgba(20, 35, 31, 0.06);
+}
+
+.skill-spotlight h3 {
+  margin: 10px 0 0;
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.skill-spotlight p:not(.eyebrow) {
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.skill-spotlight div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
 .skill-column span,
 .skill-accordion div span,
+.skill-spotlight span,
 .soft-row span,
 .soft-skill-board span {
   border: 1px solid rgba(15, 118, 110, 0.18);
@@ -859,6 +944,7 @@ a {
   }
 
   .hero-actions,
+  .skill-command,
   .stat-strip,
   .proof-grid,
   .company-skill-grid,
