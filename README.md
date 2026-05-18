@@ -15,6 +15,7 @@ This project presents Hassan Zahid as a backend-focused software engineer with e
 ## Sections Included
 
 - Personal hero with CV download actions
+- Availability section for remote, freelance, full-time, part-time, contract, and project-based work
 - Proof-point section for fast profile signal
 - Role-fit section for backend, UI-capable backend, integrations, and cloud-ready roles
 - Interactive company-to-company experience and skill map
@@ -50,6 +51,7 @@ You can update:
 
 - Headline and summary text
 - Personal hero copy
+- Availability options
 - Role-fit cards
 - Experience entries and company-specific skill categories
 - Overall technical skill groups

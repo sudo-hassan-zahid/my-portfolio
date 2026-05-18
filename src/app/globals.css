@@ -408,6 +408,7 @@ a {
 }
 
 .proof-grid,
+.availability-grid,
 .role-fit-grid,
 .soft-skill-board,
 .signal-list {
@@ -416,11 +417,13 @@ a {
 }
 
 .proof-grid,
+.availability-grid,
 .role-fit-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .proof-card,
+.availability-grid article,
 .role-fit-grid article,
 .skill-accordion,
 .soft-skill-board article,
@@ -441,6 +444,25 @@ a {
     box-shadow 180ms ease;
 }
 
+.availability-grid article {
+  min-height: 230px;
+  overflow: hidden;
+  padding: 22px;
+  position: relative;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.availability-grid article::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+}
+
 .role-fit-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -455,6 +477,7 @@ a {
 }
 
 .proof-card:hover,
+.availability-grid article:hover,
 .role-fit-grid article:hover {
   transform: translateY(-4px);
   border-color: rgba(15, 118, 110, 0.32);
@@ -462,6 +485,7 @@ a {
 }
 
 .proof-card h3,
+.availability-grid h3,
 .role-fit-grid h3,
 .soft-skill-board h3,
 .skill-column h4 {
@@ -472,10 +496,18 @@ a {
 }
 
 .proof-card p,
+.availability-grid p,
 .role-fit-grid p {
   margin: 18px 0 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.availability-grid div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
 }
 
 .role-fit-grid div {
@@ -722,6 +754,7 @@ a {
 .skill-column span,
 .skill-accordion div span,
 .skill-spotlight span,
+.availability-grid span,
 .role-fit-grid span,
 .soft-row span,
 .soft-skill-board span {
@@ -917,6 +950,7 @@ a {
   }
 
   .proof-grid,
+  .availability-grid,
   .role-fit-grid,
   .soft-skill-board,
   .signal-list {
@@ -975,6 +1009,7 @@ a {
   .skill-command,
   .stat-strip,
   .proof-grid,
+  .availability-grid,
   .role-fit-grid,
   .company-skill-grid,
   .skill-matrix,

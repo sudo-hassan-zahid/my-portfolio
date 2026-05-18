@@ -6,6 +6,7 @@ const cvHref = "/Hassan_Zahid_CV.pdf";
 
 const navItems = [
   { label: "About", href: "#about" },
+  { label: "Availability", href: "#availability" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
@@ -32,6 +33,24 @@ const proofPoints = [
     title: "Production support",
     detail:
       "Comfortable with critical bug fixes, monitoring, legacy systems, and multi-tenant risk.",
+  },
+];
+
+const availabilityGroups = [
+  {
+    title: "Work setup",
+    detail: "Remote work is the best fit for how I collaborate and deliver.",
+    options: ["Remote", "Freelance roles"],
+  },
+  {
+    title: "Engagement type",
+    detail: "Open to structured roles or focused delivery around a defined scope.",
+    options: ["Full-time", "Part-time", "Contract-based", "Project-based"],
+  },
+  {
+    title: "Best fit",
+    detail: "Backend-heavy product work, APIs, integrations, deployment, and support.",
+    options: ["Backend systems", "API delivery", "Cloud-ready apps", "Product support"],
   },
 ];
 
@@ -319,6 +338,10 @@ export default function Home() {
             <span>Phone</span>
             <a href="tel:+923211946159">+92 321 1946159</a>
           </div>
+          <div className="availability-row">
+            <span>Availability</span>
+            <strong>Remote, freelance, full-time, part-time</strong>
+          </div>
           <div className="system-map" aria-label="Core engineering coverage">
             {["APIs", "Data", "Cloud", "Jobs", "UI Delivery", "Support"].map((node) => (
               <span key={node}>{node}</span>
@@ -328,6 +351,26 @@ export default function Home() {
             Download CV PDF
           </a>
         </aside>
+      </section>
+
+      <section id="availability" className="content-section availability-section">
+        <div className="section-kicker">
+          <p className="eyebrow">Availability</p>
+          <h2>Open to remote and flexible backend-focused work.</h2>
+        </div>
+        <div className="availability-grid">
+          {availabilityGroups.map((group) => (
+            <article key={group.title}>
+              <h3>{group.title}</h3>
+              <p>{group.detail}</p>
+              <div>
+                {group.options.map((option) => (
+                  <span key={option}>{option}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="about" className="content-section">
