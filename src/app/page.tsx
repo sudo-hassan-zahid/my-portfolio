@@ -705,7 +705,7 @@ export default function Home() {
         </aside>
       </section>
 
-      <section id="availability" className="content-section availability-section">
+      {/* <section id="availability" className="content-section availability-section">
         <div className="section-kicker">
           <p className="eyebrow">Availability</p>
           <h2>Remote backend work.</h2>
@@ -723,7 +723,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section id="about" className="content-section">
         <div className="section-kicker">
