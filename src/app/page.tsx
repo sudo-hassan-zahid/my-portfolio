@@ -12,8 +12,8 @@ const navItems = [
 ];
 
 const quickStats = [
-  { value: "4+", label: "years building production software" },
-  { value: "3", label: "companies across backend, web, and networking" },
+  { value: "Backend-first", label: "software engineering with practical UI delivery" },
+  { value: "2", label: "recent software roles mapped by company and skill area" },
   { value: "End-to-end", label: "architecture, deployment, monitoring, support" },
 ];
 
@@ -147,43 +147,6 @@ const companyExperience = [
       "Practical troubleshooting",
     ],
   },
-  {
-    id: "corvit",
-    role: "Computer Lab Assistant",
-    company: "Corvit Systems",
-    location: "Islamabad",
-    period: "Oct 2020 - Oct 2021",
-    signal: "Technical support",
-    overview:
-      "Supported hands-on networking labs, student troubleshooting, instructor sessions, and lab environment readiness.",
-    achievements: [
-      "Assisted instructors during networking and lab sessions for practical technical training.",
-      "Helped students configure and troubleshoot routers, switches, and firewall setups.",
-      "Prepared and maintained networking lab environments for practical sessions and examinations.",
-      "Managed hardware inventory and ensured equipment functionality across lab sessions.",
-    ],
-    categories: [
-      {
-        title: "Networking",
-        skills: ["Routers", "Switches", "Firewalls", "Cisco Packet Tracer", "GNS3"],
-      },
-      {
-        title: "Support",
-        skills: ["Student troubleshooting", "Instructor assistance", "Lab readiness"],
-      },
-      {
-        title: "Operations",
-        skills: ["Hardware inventory", "Equipment maintenance", "Exam preparation"],
-      },
-    ],
-    softSkills: [
-      "Teaching support",
-      "Patience",
-      "Clear explanations",
-      "Operational reliability",
-      "Hands-on problem solving",
-    ],
-  },
 ];
 
 const skillGroups = [
@@ -235,9 +198,9 @@ const skillGroups = [
     ],
   },
   {
-    title: "Publishing & Tools",
-    summary: "A practical base in accessible publishing and hands-on network tooling.",
-    skills: ["EPUB", "Kindle Previewer", "Ace by DAISY", "Thorium Reader", "FileZilla", "PuTTY", "Cisco Packet Tracer", "GNS3"],
+    title: "Publishing & Operations",
+    summary: "A practical base in accessible publishing, deployments, and project support tooling.",
+    skills: ["EPUB", "Kindle Previewer", "Ace by DAISY", "Thorium Reader", "FileZilla", "PuTTY"],
   },
 ];
 
