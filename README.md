@@ -2,7 +2,7 @@
 
 Personal portfolio website built with Next.js, React, TypeScript, and Tailwind CSS.
 
-This project presents Hassan Zahid as a backend-focused full-stack developer with experience across scalable applications, APIs, cloud infrastructure, integrations, databases, publishing workflows, and production support.
+This project presents Hassan Zahid as a backend-focused software engineer with experience across scalable applications, APIs, cloud infrastructure, integrations, databases, publishing workflows, production support, and practical UI delivery when needed.
 
 ## Stack
 
@@ -16,7 +16,7 @@ This project presents Hassan Zahid as a backend-focused full-stack developer wit
 
 - Recruiter-focused hero with CV download actions
 - Proof-point section for fast hiring signal
-- Role-fit section for backend, full-stack, integrations, and cloud-ready roles
+- Role-fit section for backend, UI-capable backend, integrations, and cloud-ready roles
 - Interactive company-to-company experience and skill map
 - Categorized technical skill spotlight and accordions
 - Categorized soft skills

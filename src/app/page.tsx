@@ -43,10 +43,10 @@ const roleFitCards = [
     cues: ["Golang", "Node.js", "NestJS", "Laravel", "REST APIs", "Queues"],
   },
   {
-    title: "Full-Stack Developer",
+    title: "Backend Engineer with UI Range",
     detail:
-      "Comfortable connecting backend systems with usable React, Next.js, WordPress, and publishing interfaces.",
-    cues: ["React", "Next.js", "WordPress", "Laravel", "MySQL", "Responsive UI"],
+      "Can deliver React, Next.js, WordPress, and publishing UI work when needed, while keeping core depth in backend systems.",
+    cues: ["Backend-first", "React when needed", "Next.js when needed", "WordPress", "Laravel", "MySQL"],
   },
   {
     title: "Integrations Engineer",
@@ -71,7 +71,7 @@ const companyExperience = [
     period: "Jan 2025 - Present",
     signal: "Current role",
     overview:
-      "Backend-focused full-stack work across multiple client projects, owning architecture, deployments, integrations, and production stability.",
+      "Backend-centered product engineering across multiple client projects, owning architecture, deployments, integrations, and production stability.",
     achievements: [
       "Built and maintained scalable applications using Golang, Node.js, NestJS, Laravel, React, and Next.js.",
       "Designed RESTful APIs and integrated third-party platforms including Stripe, PayKickstart, Zoho, Clio, OpenAI, and Gemini APIs.",
@@ -131,7 +131,7 @@ const companyExperience = [
         skills: ["EPUB", "HTML", "XHTML", "CSS", "Kindle Previewer", "Ace by DAISY"],
       },
       {
-        title: "Frontend",
+        title: "UI Delivery",
         skills: ["Responsive UI", "Bootstrap", "jQuery", "Author websites"],
       },
       {
@@ -208,8 +208,8 @@ const skillGroups = [
     skills: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "Firebase", "Supabase"],
   },
   {
-    title: "Frontend & Web",
-    summary: "Enough frontend depth to ship usable products and collaborate cleanly.",
+    title: "UI Delivery & Web",
+    summary: "Practical UI delivery range for products that need backend work connected to usable interfaces.",
     skills: ["React", "Next.js", "JavaScript", "WordPress", "HTML", "XHTML", "CSS", "Bootstrap", "jQuery"],
   },
   {
@@ -261,7 +261,7 @@ const softSkillGroups = [
 ];
 
 const recruiterSignals = [
-  "Backend engineer who can also ship React and Next.js interfaces.",
+  "Backend engineer who can deliver React and Next.js UI work when the project needs it.",
   "Has worked directly with production systems, cloud infrastructure, and multi-tenant legacy risk.",
   "Comfortable using AI tools as leverage while still owning architecture and code quality.",
   "Can discuss APIs, databases, deployment, integrations, and user-facing workflow details in one conversation.",
@@ -293,7 +293,7 @@ export default function Home() {
           <span className="brand-mark">HZ</span>
           <span>
             <strong>Hassan Zahid</strong>
-            <small>Backend-focused full-stack developer</small>
+            <small>Backend-first software engineer</small>
           </span>
         </a>
         <nav aria-label="Primary navigation">
@@ -311,11 +311,12 @@ export default function Home() {
       <section id="top" className="hero-section">
         <div className="hero-copy">
           <p className="eyebrow">Available for freelance and full-time roles</p>
-          <h1>Backend systems, full-stack product work, and production ownership.</h1>
+          <h1>Backend systems, product delivery, and production ownership.</h1>
           <p className="hero-lede">
             I build scalable applications, APIs, integrations, and deployment-ready systems
-            with Golang, Laravel, Node.js, React, Next.js, databases, AWS, Docker, and
-            AI-assisted engineering workflows.
+            with Golang, Laravel, Node.js, databases, AWS, Docker, and AI-assisted
+            engineering workflows. I can handle React and Next.js UI work when the product
+            needs it, but my deepest lane is backend engineering.
           </p>
           <div className="hero-actions" aria-label="Recruiter actions">
             <a className="primary-action" href={cvHref} download>
@@ -356,7 +357,7 @@ export default function Home() {
             <a href="tel:+923211946159">+92 321 1946159</a>
           </div>
           <div className="system-map" aria-label="Core engineering coverage">
-            {["APIs", "Data", "Cloud", "Jobs", "Frontend", "Support"].map((node) => (
+            {["APIs", "Data", "Cloud", "Jobs", "UI Delivery", "Support"].map((node) => (
               <span key={node}>{node}</span>
             ))}
           </div>
