@@ -193,6 +193,7 @@ a {
   min-height: 42px;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   border-radius: 8px;
   font-weight: 800;
   line-height: 1.1;
@@ -202,6 +203,12 @@ a {
     border-color 180ms ease,
     color 180ms ease,
     box-shadow 180ms ease;
+}
+
+.nav-download svg,
+.primary-action svg,
+.secondary-action svg {
+  flex: 0 0 auto;
 }
 
 .site-nav nav a {
@@ -391,6 +398,12 @@ a {
 .availability-row span {
   color: rgba(248, 250, 242, 0.64);
   font-size: 0.82rem;
+}
+
+.availability-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
 }
 
 .panel-topline strong {
@@ -609,6 +622,18 @@ a {
   line-height: 1.65;
 }
 
+.achievement-list strong {
+  color: var(--foreground);
+  font-weight: 900;
+}
+
+.achievement-list em {
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
 .achievement-list li::before {
   content: "";
   position: absolute;
@@ -659,6 +684,9 @@ a {
 }
 
 .skill-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -684,6 +712,10 @@ a {
   color: var(--panel-text);
 }
 
+.skill-tabs button svg {
+  flex: 0 0 auto;
+}
+
 .skill-tabs span {
   display: block;
 }
@@ -703,6 +735,9 @@ a {
 }
 
 .skill-spotlight h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin: 10px 0 0;
   font-family: var(--font-space-grotesk), Arial, sans-serif;
   font-size: 2.25rem;
@@ -728,6 +763,9 @@ a {
 .availability-grid span,
 .soft-row span,
 .soft-skill-board span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   border: 1px solid rgba(15, 118, 110, 0.18);
   border-radius: 8px;
   background: rgba(15, 118, 110, 0.08);
@@ -735,6 +773,13 @@ a {
   padding: 8px 10px;
   font-size: 0.86rem;
   font-weight: 800;
+}
+
+.skill-column span svg,
+.skill-accordion div span svg,
+.skill-spotlight span svg {
+  flex: 0 0 auto;
+  color: var(--accent);
 }
 
 .soft-row {
@@ -813,8 +858,8 @@ a {
 
 .why-me-section {
   display: grid;
-  grid-template-columns: 0.46fr 0.54fr;
-  gap: 24px;
+  grid-template-columns: 0.38fr 0.62fr;
+  gap: 28px;
   align-items: start;
 }
 
@@ -827,6 +872,29 @@ a {
   margin-top: 12px;
 }
 
+.why-me-radar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 118, 110, 0.24);
+  border-radius: 8px;
+  background: rgba(15, 118, 110, 0.24);
+  box-shadow: 0 14px 32px rgba(20, 35, 31, 0.08);
+}
+
+.why-me-radar span {
+  display: grid;
+  min-height: 76px;
+  place-items: center;
+  background: rgba(249, 247, 238, 0.9);
+  color: var(--accent-strong);
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
 .why-me-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -834,27 +902,80 @@ a {
 }
 
 .why-me-list article {
-  min-height: 190px;
+  min-height: 208px;
   margin: 0;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(249, 247, 238, 0.9);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 247, 0.78), rgba(230, 238, 224, 0.86)),
+    rgba(249, 247, 238, 0.9);
   padding: 20px;
   box-shadow: 0 10px 26px rgba(20, 35, 31, 0.06);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.why-me-list article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(15, 118, 110, 0.32);
+  box-shadow: 0 16px 34px rgba(20, 35, 31, 0.1);
+}
+
+.why-me-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.why-me-card-top span,
+.why-me-card-top svg {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 8px;
+}
+
+.why-me-card-top span {
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--accent-strong);
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.why-me-card-top svg {
+  background: var(--accent-strong);
+  color: var(--panel-text);
+  padding: 8px;
 }
 
 .why-me-list h3 {
   margin: 0;
   font-family: var(--font-space-grotesk), Arial, sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 800;
   line-height: 1.3;
 }
 
+.why-me-list strong {
+  display: inline-flex;
+  margin-top: 12px;
+  color: var(--accent-strong);
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
 .why-me-list p {
-  margin: 14px 0 0;
+  margin: 10px 0 0;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.58;
 }
 
 .contact-section {
