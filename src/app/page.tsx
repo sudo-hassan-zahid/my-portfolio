@@ -399,8 +399,8 @@ export default function Home() {
 
       <section id="experience" className="content-section">
         <div className="section-kicker">
-          <p className="eyebrow">Company-to-company skill map</p>
-          <h2>Experience you can inspect.</h2>
+          <p className="eyebrow">Experience</p>
+          <h2>Where I have built and owned real systems.</h2>
         </div>
 
         <div className="experience-list">
