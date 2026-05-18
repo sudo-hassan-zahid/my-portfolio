@@ -21,7 +21,7 @@ This project presents Hassan Zahid as a backend-focused software engineer with e
 - Expanded company-to-company experience and skill map
 - Categorized technical skill spotlight and accordions
 - Categorized soft skills
-- Profile signal section
+- Why me section with grounded profile strengths
 - Contact section with email, phone, and professional CV download
 
 ## Local Development
@@ -56,6 +56,7 @@ You can update:
 - Experience entries and company-specific skill categories
 - Overall technical skill groups
 - Soft skill groups
+- Why me points
 - Contact information
 
 Global styles and theme customization live in [src/app/globals.css](src/app/globals.css).

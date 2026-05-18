@@ -9,6 +9,7 @@ const navItems = [
   { label: "Availability", href: "#availability" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
+  { label: "Why me", href: "#why-me" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -253,11 +254,37 @@ const softSkillGroups = [
   },
 ];
 
-const profileSignals = [
-  "Backend engineer who can deliver React and Next.js UI work when the project needs it.",
-  "Has worked directly with production systems, cloud infrastructure, and multi-tenant legacy risk.",
-  "Comfortable using AI tools as leverage while still owning architecture and code quality.",
-  "Can discuss APIs, databases, deployment, integrations, and user-facing workflow details in one conversation.",
+const whyMePoints = [
+  {
+    title: "I do not stop at writing endpoints.",
+    detail:
+      "Most of my useful work has been around the whole backend path: API shape, database choices, background jobs, deployment, monitoring, and fixing what breaks after release.",
+  },
+  {
+    title: "I am comfortable with messy real-world systems.",
+    detail:
+      "I have worked on legacy multi-tenant PHP systems, publishing workflows, client projects, payment flows, and production issues where small backend changes need care.",
+  },
+  {
+    title: "I can move from idea to working proof quickly.",
+    detail:
+      "POCs, rapid feature experiments, integrations, and AI-assisted workflows are part of how I validate direction without pretending prototypes are finished architecture.",
+  },
+  {
+    title: "I communicate across the actual project surface.",
+    detail:
+      "I can talk through APIs, databases, AWS, Docker, Sentry, third-party integrations, and enough UI delivery to keep backend work connected to the product.",
+  },
+  {
+    title: "I use AI tools as leverage, not as a replacement for judgment.",
+    detail:
+      "I have used Claude Code, Codex, Cursor, Windsurf, Copilot, and LLM APIs to speed up debugging, documentation, and repetitive work while still owning the decisions.",
+  },
+  {
+    title: "I care about staying useful after launch.",
+    detail:
+      "Deployment, post-deployment fixes, alert monitoring, performance work, and maintenance are not side tasks to me. That is where a lot of trust is built.",
+  },
 ];
 
 export default function Home() {
@@ -525,14 +552,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="content-section signal-section">
+      <section id="why-me" className="content-section why-me-section">
         <div className="section-kicker">
-          <p className="eyebrow">Profile signal</p>
-          <h2>How I tend to be useful.</h2>
+          <p className="eyebrow">Why me?</p>
+          <h2>Because I am useful where backend work gets real.</h2>
         </div>
-        <div className="signal-list">
-          {profileSignals.map((signal) => (
-            <p key={signal}>{signal}</p>
+        <div className="why-me-list">
+          {whyMePoints.map((point) => (
+            <article key={point.title}>
+              <h3>{point.title}</h3>
+              <p>{point.detail}</p>
+            </article>
           ))}
         </div>
       </section>
