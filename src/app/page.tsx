@@ -43,6 +43,7 @@ type Achievement = {
   lead: string;
   detail: string;
   note?: string;
+  highlights: string[];
 };
 
 type SkillGroup = {
@@ -61,19 +62,29 @@ type WhyMePoint = {
 
 const skillIconMap: Record<string, LucideIcon> = {
   "Ace by DAISY": CheckCircle2,
+  "Accessibility care": ShieldCheck,
+  "Author websites": Globe2,
   "AWS EC2": Cloud,
   "Background jobs": Settings2,
   Bootstrap: Globe2,
   BullMQ: Settings2,
   "Claude Code": Brain,
+  "Client communication": Mail,
+  "Client-site maintenance": Globe2,
   Clio: Wrench,
   CloudFront: Cloud,
   Codex: Brain,
   CodeIgniter: Code2,
   Copilot: Brain,
+  "Cross-team collaboration": Settings2,
   CSS: Globe2,
   Cursor: Brain,
+  "Deployment troubleshooting": Wrench,
+  "Detail orientation": CheckCircle2,
+  Debugging: Wrench,
+  "Documentation habits": FileText,
   Docker: Server,
+  "End-to-end delivery": Rocket,
   EPUB: BookOpen,
   "FileZilla": Server,
   Firebase: Database,
@@ -95,6 +106,11 @@ const skillIconMap: Record<string, LucideIcon> = {
   PayKickstart: CreditCard,
   PHP: Code2,
   PostgreSQL: Database,
+  "Practical troubleshooting": Wrench,
+  "POC thinking": Rocket,
+  "POC development": Rocket,
+  "Production judgment": ShieldCheck,
+  "Production stability": ShieldCheck,
   PuTTY: Terminal,
   React: Globe2,
   Redis: Database,
@@ -104,12 +120,23 @@ const skillIconMap: Record<string, LucideIcon> = {
   Sentry: ShieldCheck,
   SES: Mail,
   SNS: Cloud,
+  "Solo backend ownership": Server,
   Stripe: CreditCard,
   Supabase: Database,
   "Swagger/OpenAPI": FileText,
+  "Independent execution": CheckCircle2,
+  "Legacy-system caution": ShieldCheck,
+  "Maintenance mindset": Wrench,
+  "Performance optimization": Rocket,
+  "Reliability under pressure": ShieldCheck,
+  "Requirements translation": Settings2,
+  "Senior engineer collaboration": Settings2,
+  "Team support": CheckCircle2,
   "Thorium Reader": BookOpen,
   Windsurf: Brain,
   WordPress: Globe2,
+  "Workflow design": Settings2,
+  "Workflow thinking": Settings2,
   XHTML: Globe2,
   Zoho: Wrench,
 };
@@ -170,61 +197,94 @@ const companyExperience = [
       {
         lead: "Built scalable apps",
         detail: "with Golang, Node.js, NestJS, Laravel, React, and Next.js.",
+        highlights: ["Golang", "Node.js", "NestJS", "Laravel", "React", "Next.js"],
       },
       {
         lead: "Handled parallel projects",
         detail: "from development to deployment while working with clients and internal teams.",
+        highlights: ["development to deployment", "clients", "internal teams"],
       },
       {
         lead: "Owned backend delivery",
         detail: "both independently and with Senior and Lead Software Engineers.",
+        highlights: ["backend delivery", "independently", "Senior and Lead Software Engineers"],
       },
       {
         lead: "Designed data layers",
         detail: "across MySQL, PostgreSQL, MongoDB, Redis, Firebase, and Supabase.",
+        highlights: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "Firebase", "Supabase"],
       },
       {
         lead: "Shipped API integrations",
         detail: "for Stripe, PayKickstart, Zoho, Clio, OpenAI, and Gemini APIs.",
+        highlights: ["API integrations", "Stripe", "PayKickstart", "Zoho", "Clio", "OpenAI", "Gemini APIs"],
       },
       {
         lead: "Integrated payment flows",
         detail: "for subscription and transaction workflows.",
         note: "Stripe and PayKickstart",
+        highlights: ["payment flows", "subscription and transaction workflows", "Stripe", "PayKickstart"],
       },
       {
         lead: "Moved heavy workloads",
         detail: "from ElectronJS into scalable backend queues for PDFs, AI operations, and background jobs.",
-        note: "Golang asynq and Node.js BullMQ",
+        note: "Golang Asynq and Node.js BullMQ",
+        highlights: [
+          "ElectronJS",
+          "scalable backend queues",
+          "PDFs",
+          "AI operations",
+          "background jobs",
+          "Golang Asynq",
+          "Node.js BullMQ",
+        ],
       },
       {
         lead: "Worked carefully in legacy systems",
         detail: "where multi-tenant PHP changes could affect several clients and customer workflows.",
+        highlights: ["legacy systems", "multi-tenant PHP", "several clients", "customer workflows"],
       },
       {
         lead: "Built proof-of-concepts",
         detail: "to validate client ideas, rapid experiments, and business workflows.",
+        highlights: ["proof-of-concepts", "client ideas", "rapid experiments", "business workflows"],
       },
       {
         lead: "Used AI-assisted workflows",
         detail: "to speed up development, prototyping, debugging, docs, and repetitive engineering tasks.",
         note: "Claude Code, Codex, Cursor, Windsurf, Copilot",
+        highlights: [
+          "AI-assisted workflows",
+          "development",
+          "prototyping",
+          "debugging",
+          "docs",
+          "Claude Code",
+          "Codex",
+          "Cursor",
+          "Windsurf",
+          "Copilot",
+        ],
       },
       {
         lead: "Managed AWS infrastructure",
         detail: "across EC2, S3, SES, CloudFront, Route53, SNS, and alert monitoring.",
+        highlights: ["AWS infrastructure", "EC2", "S3", "SES", "CloudFront", "Route53", "SNS", "alert monitoring"],
       },
       {
         lead: "Containerized applications",
         detail: "with Docker to streamline local development and deployment workflows.",
+        highlights: ["Docker", "local development", "deployment workflows"],
       },
       {
         lead: "Supported releases",
         detail: "with post-deployment fixes, Sentry monitoring, and critical bug resolution.",
+        highlights: ["post-deployment fixes", "Sentry monitoring", "critical bug resolution"],
       },
       {
         lead: "Maintained systems end-to-end",
         detail: "covering architecture, deployments, stability, and ongoing backend maintenance.",
+        highlights: ["architecture", "deployments", "stability", "ongoing backend maintenance"],
       },
     ] satisfies Achievement[],
     categories: [
@@ -266,31 +326,38 @@ const companyExperience = [
       {
         lead: "Developed accessible EPUBs",
         detail: "with HTML, XHTML, and CSS for multiple e-reader platforms.",
+        highlights: ["accessible EPUBs", "HTML", "XHTML", "CSS", "e-reader platforms"],
       },
       {
         lead: "Validated publishing quality",
         detail: "with Kindle Previewer, Ace by DAISY, and Thorium Reader.",
         note: "compliance and accessibility",
+        highlights: ["Kindle Previewer", "Ace by DAISY", "Thorium Reader", "compliance and accessibility"],
       },
       {
         lead: "Maintained production workflows",
         detail: "inside internal systems used as the source of truth for book publishing.",
+        highlights: ["production workflows", "internal systems", "source of truth", "book publishing"],
       },
       {
         lead: "Improved author websites",
         detail: "with a focus on responsiveness, usability, and performance.",
+        highlights: ["author websites", "responsiveness", "usability", "performance"],
       },
       {
         lead: "Built backend features",
         detail: "using Laravel, CodeIgniter, and MySQL.",
+        highlights: ["backend features", "Laravel", "CodeIgniter", "MySQL"],
       },
       {
         lead: "Customized WordPress",
         detail: "themes and plugins around project requirements.",
+        highlights: ["WordPress", "themes", "plugins", "project requirements"],
       },
       {
         lead: "Handled deployment support",
         detail: "through Linux, FTP, SSH, troubleshooting, and server-side operations.",
+        highlights: ["deployment support", "Linux", "FTP", "SSH", "troubleshooting", "server-side operations"],
       },
     ] satisfies Achievement[],
     categories: [
@@ -449,7 +516,47 @@ const whyMePoints: WhyMePoint[] = [
 function SkillIcon({ skill }: { skill: string }) {
   const Icon = skillIconMap[skill] ?? CheckCircle2;
 
-  return <Icon aria-hidden="true" size={14} strokeWidth={2.4} />;
+  return (
+    <span className="chip-icon" aria-hidden="true">
+      <Icon size={14} strokeWidth={2.4} />
+    </span>
+  );
+}
+
+function renderHighlightedAchievement(achievement: Achievement) {
+  const text = [achievement.lead, achievement.detail, achievement.note].filter(Boolean).join(" ");
+  const parts = [];
+  let cursor = 0;
+  let key = 0;
+
+  while (cursor < text.length) {
+    const nextMatch = achievement.highlights.reduce(
+      (match, highlight) => {
+        const index = text.indexOf(highlight, cursor);
+
+        if (index === -1 || index >= match.index) {
+          return match;
+        }
+
+        return { index, highlight };
+      },
+      { index: Number.POSITIVE_INFINITY, highlight: "" },
+    );
+
+    if (!nextMatch.highlight) {
+      parts.push(text.slice(cursor));
+      break;
+    }
+
+    if (nextMatch.index > cursor) {
+      parts.push(text.slice(cursor, nextMatch.index));
+    }
+
+    parts.push(<strong key={`${nextMatch.highlight}-${key++}`}>{nextMatch.highlight}</strong>);
+    cursor = nextMatch.index + nextMatch.highlight.length;
+  }
+
+  return parts;
 }
 
 export default function Home() {
@@ -481,7 +588,9 @@ export default function Home() {
           ))}
         </nav>
         <a className="nav-download" href={cvHref} download aria-label="Download Hassan Zahid CV PDF">
-          <Download aria-hidden="true" size={17} strokeWidth={2.4} />
+          <span className="button-icon" aria-hidden="true">
+            <Download size={17} strokeWidth={2.4} />
+          </span>
           Download CV
         </a>
       </header>
@@ -498,19 +607,27 @@ export default function Home() {
           </p>
           <div className="hero-actions" aria-label="Profile actions">
             <a className="primary-action" href={cvHref} download>
-              <Download aria-hidden="true" size={18} strokeWidth={2.4} />
+              <span className="button-icon" aria-hidden="true">
+                <Download size={18} strokeWidth={2.4} />
+              </span>
               Download CV
             </a>
             <a className="secondary-action" href="#experience">
-              <ArrowRight aria-hidden="true" size={18} strokeWidth={2.4} />
+              <span className="button-icon" aria-hidden="true">
+                <ArrowRight size={18} strokeWidth={2.4} />
+              </span>
               Review experience
             </a>
             <a className="secondary-action" href="mailto:hassanisavailable@gmail.com">
-              <Mail aria-hidden="true" size={18} strokeWidth={2.4} />
+              <span className="button-icon" aria-hidden="true">
+                <Mail size={18} strokeWidth={2.4} />
+              </span>
               Email me
             </a>
             <a className="secondary-action" href={githubHref} target="_blank" rel="noreferrer">
-              <GitBranch aria-hidden="true" size={18} strokeWidth={2.4} />
+              <span className="button-icon" aria-hidden="true">
+                <GitBranch size={18} strokeWidth={2.4} />
+              </span>
               GitHub
             </a>
           </div>
@@ -531,28 +648,36 @@ export default function Home() {
           </div>
           <div className="availability-row">
             <span>
-              <MapPin aria-hidden="true" size={15} strokeWidth={2.4} />
+              <span className="row-icon" aria-hidden="true">
+                <MapPin size={15} strokeWidth={2.4} />
+              </span>
               Location
             </span>
             <strong>Rawalpindi, Pakistan</strong>
           </div>
           <div className="availability-row">
             <span>
-              <Mail aria-hidden="true" size={15} strokeWidth={2.4} />
+              <span className="row-icon" aria-hidden="true">
+                <Mail size={15} strokeWidth={2.4} />
+              </span>
               Email
             </span>
             <a href="mailto:hassanisavailable@gmail.com">hassanisavailable@gmail.com</a>
           </div>
           <div className="availability-row">
             <span>
-              <Phone aria-hidden="true" size={15} strokeWidth={2.4} />
+              <span className="row-icon" aria-hidden="true">
+                <Phone size={15} strokeWidth={2.4} />
+              </span>
               Phone
             </span>
             <a href="tel:+923211946159">+92 321 1946159</a>
           </div>
           <div className="availability-row">
             <span>
-              <GitBranch aria-hidden="true" size={15} strokeWidth={2.4} />
+              <span className="row-icon" aria-hidden="true">
+                <GitBranch size={15} strokeWidth={2.4} />
+              </span>
               GitHub
             </span>
             <a href={githubHref} target="_blank" rel="noreferrer">
@@ -561,7 +686,9 @@ export default function Home() {
           </div>
           <div className="availability-row">
             <span>
-              <CheckCircle2 aria-hidden="true" size={15} strokeWidth={2.4} />
+              <span className="row-icon" aria-hidden="true">
+                <CheckCircle2 size={15} strokeWidth={2.4} />
+              </span>
               Availability
             </span>
             <strong>Remote, freelance, full-time, part-time</strong>
@@ -634,37 +761,37 @@ export default function Home() {
 
               <p className="experience-overview">{item.overview}</p>
 
-                <ul className="achievement-list">
-                  {item.achievements.map((achievement) => (
-                    <li key={achievement.lead}>
-                      <strong>{achievement.lead}</strong>{" "}
-                      <span>{achievement.detail}</span>
-                      {achievement.note ? <em>{achievement.note}</em> : null}
-                    </li>
-                  ))}
-                </ul>
+              <ul className="achievement-list">
+                {item.achievements.map((achievement) => (
+                  <li key={achievement.lead}>
+                    {renderHighlightedAchievement(achievement)}
+                  </li>
+                ))}
+              </ul>
 
               <div className="company-skill-grid">
-                {item.categories.map((category) => (
+                {[...item.categories, { title: "Soft Skills", skills: item.softSkills }].map((category) => (
                   <div key={category.title} className="skill-column">
                     <h4>{category.title}</h4>
                     <div>
-                        {category.skills.map((skill) => (
-                          <span key={skill}>
-                            <SkillIcon skill={skill} />
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
+                      {category.skills.map((skill) => (
+                        <span key={skill}>
+                          <SkillIcon skill={skill} />
+                          {skill}
+                        </span>
+                      ))}
                     </div>
+                  </div>
                 ))}
               </div>
 
+              {/* Soft skills now live inside the grouped job skill grid above.
               <div className="soft-row" aria-label={`${item.company} soft skills`}>
                 {item.softSkills.map((skill) => (
                   <span key={skill}>{skill}</span>
                 ))}
               </div>
+              */}
             </article>
           ))}
         </div>
@@ -691,7 +818,9 @@ export default function Home() {
                   className={activeSkillGroup.title === group.title ? "active" : ""}
                   onClick={() => setActiveSkillTitle(group.title)}
                 >
-                  <GroupIcon aria-hidden="true" size={18} strokeWidth={2.4} />
+                  <span className="button-icon" aria-hidden="true">
+                    <GroupIcon size={18} strokeWidth={2.4} />
+                  </span>
                   <span>{group.title}</span>
                 </button>
               );
@@ -701,7 +830,9 @@ export default function Home() {
           <article id="skill-spotlight" className="skill-spotlight" role="tabpanel" aria-live="polite">
             <p className="eyebrow">Selected category</p>
             <h3>
-              <ActiveSkillIcon aria-hidden="true" size={30} strokeWidth={2.2} />
+              <span className="spotlight-icon" aria-hidden="true">
+                <ActiveSkillIcon size={28} strokeWidth={2.2} />
+              </span>
               {activeSkillGroup.title}
             </h3>
             <p>{activeSkillGroup.summary}</p>
@@ -726,7 +857,10 @@ export default function Home() {
               <p>{group.summary}</p>
               <div>
                 {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
+                  <span key={skill}>
+                    <SkillIcon skill={skill} />
+                    {skill}
+                  </span>
                 ))}
               </div>
             </details>
@@ -764,15 +898,17 @@ export default function Home() {
             const PointIcon = point.icon;
 
             return (
-            <article key={point.title}>
-              <div className="why-me-card-top">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <PointIcon aria-hidden="true" size={20} strokeWidth={2.4} />
-              </div>
-              <h3>{point.title}</h3>
-              <strong>{point.signal}</strong>
-              <p>{point.detail}</p>
-            </article>
+              <article key={point.title}>
+                <div className="why-me-card-top">
+                  <span className="why-index">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="why-icon" aria-hidden="true">
+                    <PointIcon size={20} strokeWidth={2.4} />
+                  </span>
+                </div>
+                <h3>{point.title}</h3>
+                <strong>{point.signal}</strong>
+                <p>{point.detail}</p>
+              </article>
             );
           })}
         </div>
@@ -790,19 +926,27 @@ export default function Home() {
         </div>
         <div className="contact-actions">
           <a className="primary-action" href="mailto:hassanisavailable@gmail.com">
-            <Mail aria-hidden="true" size={18} strokeWidth={2.4} />
+            <span className="button-icon" aria-hidden="true">
+              <Mail size={18} strokeWidth={2.4} />
+            </span>
             hassanisavailable@gmail.com
           </a>
           <a className="secondary-action" href="tel:+923211946159">
-            <Phone aria-hidden="true" size={18} strokeWidth={2.4} />
+            <span className="button-icon" aria-hidden="true">
+              <Phone size={18} strokeWidth={2.4} />
+            </span>
             +92 321 1946159
           </a>
           <a className="secondary-action" href={githubHref} target="_blank" rel="noreferrer">
-            <GitBranch aria-hidden="true" size={18} strokeWidth={2.4} />
+            <span className="button-icon" aria-hidden="true">
+              <GitBranch size={18} strokeWidth={2.4} />
+            </span>
             GitHub: sudo-hassan-zahid
           </a>
           <a className="secondary-action" href={cvHref} download>
-            <Download aria-hidden="true" size={18} strokeWidth={2.4} />
+            <span className="button-icon" aria-hidden="true">
+              <Download size={18} strokeWidth={2.4} />
+            </span>
             Download CV PDF
           </a>
         </div>
