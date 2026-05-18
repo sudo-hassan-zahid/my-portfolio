@@ -35,6 +35,33 @@ const proofPoints = [
   },
 ];
 
+const roleFitCards = [
+  {
+    title: "Backend Engineer",
+    detail:
+      "Strongest fit for API development, backend architecture, background work, databases, and production ownership.",
+    cues: ["Golang", "Node.js", "NestJS", "Laravel", "REST APIs", "Queues"],
+  },
+  {
+    title: "Full-Stack Developer",
+    detail:
+      "Comfortable connecting backend systems with usable React, Next.js, WordPress, and publishing interfaces.",
+    cues: ["React", "Next.js", "WordPress", "Laravel", "MySQL", "Responsive UI"],
+  },
+  {
+    title: "Integrations Engineer",
+    detail:
+      "Useful where payments, business platforms, legal tools, and AI APIs need to talk to product workflows.",
+    cues: ["Stripe", "PayKickstart", "Zoho", "Clio", "OpenAI", "Gemini"],
+  },
+  {
+    title: "Cloud-Ready Developer",
+    detail:
+      "Practical deployment experience across AWS services, Docker, Linux access, monitoring, and production fixes.",
+    cues: ["AWS", "Docker", "Sentry", "Linux/SSH", "CloudFront", "Route53"],
+  },
+];
+
 const companyExperience = [
   {
     id: "alphasquad",
@@ -349,6 +376,26 @@ export default function Home() {
             <article key={point.title} className="proof-card">
               <h3>{point.title}</h3>
               <p>{point.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-section role-fit-section">
+        <div className="section-kicker">
+          <p className="eyebrow">Role fit</p>
+          <h2>Where Hassan is most useful.</h2>
+        </div>
+        <div className="role-fit-grid">
+          {roleFitCards.map((role) => (
+            <article key={role.title}>
+              <h3>{role.title}</h3>
+              <p>{role.detail}</p>
+              <div>
+                {role.cues.map((cue) => (
+                  <span key={cue}>{cue}</span>
+                ))}
+              </div>
             </article>
           ))}
         </div>
