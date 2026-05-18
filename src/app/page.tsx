@@ -242,10 +242,16 @@ const recruiterSignals = [
 
 export default function Home() {
   const [activeCompanyId, setActiveCompanyId] = useState(companyExperience[0].id);
+  const [activeSkillTitle, setActiveSkillTitle] = useState(skillGroups[0].title);
 
   const activeCompany = useMemo(
     () => companyExperience.find((item) => item.id === activeCompanyId) ?? companyExperience[0],
     [activeCompanyId],
+  );
+
+  const activeSkillGroup = useMemo(
+    () => skillGroups.find((group) => group.title === activeSkillTitle) ?? skillGroups[0],
+    [activeSkillTitle],
   );
 
   const activeSkillCount = activeCompany.categories.reduce(
@@ -422,6 +428,36 @@ export default function Home() {
         <div className="section-kicker">
           <p className="eyebrow">Overall skills</p>
           <h2>Grouped for fast recruiter scanning.</h2>
+        </div>
+
+        <div className="skill-command">
+          <div className="skill-tabs" role="tablist" aria-label="Overall skill categories">
+            {skillGroups.map((group) => (
+              <button
+                key={group.title}
+                type="button"
+                role="tab"
+                aria-selected={activeSkillGroup.title === group.title}
+                aria-controls="skill-spotlight"
+                className={activeSkillGroup.title === group.title ? "active" : ""}
+                onClick={() => setActiveSkillTitle(group.title)}
+              >
+                <span>{group.title}</span>
+                <small>{group.skills.length} skills</small>
+              </button>
+            ))}
+          </div>
+
+          <article id="skill-spotlight" className="skill-spotlight" role="tabpanel">
+            <p className="eyebrow">Selected category</p>
+            <h3>{activeSkillGroup.title}</h3>
+            <p>{activeSkillGroup.summary}</p>
+            <div>
+              {activeSkillGroup.skills.map((skill) => (
+                <span key={skill}>{skill}</span>
+              ))}
+            </div>
+          </article>
         </div>
 
         <div className="skill-matrix">
