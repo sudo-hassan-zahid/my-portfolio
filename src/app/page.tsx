@@ -303,7 +303,7 @@ export default function Home() {
             </a>
           ))}
         </nav>
-        <a className="nav-download" href={cvHref} download>
+        <a className="nav-download" href={cvHref} download aria-label="Download Hassan Zahid CV PDF">
           Download CV
         </a>
       </header>
@@ -415,6 +415,7 @@ export default function Home() {
                 type="button"
                 role="tab"
                 aria-selected={activeCompany.id === item.id}
+                aria-controls="company-experience-panel"
                 className={activeCompany.id === item.id ? "active" : ""}
                 onClick={() => setActiveCompanyId(item.id)}
               >
@@ -424,7 +425,12 @@ export default function Home() {
             ))}
           </div>
 
-          <article className="experience-stage" role="tabpanel">
+          <article
+            id="company-experience-panel"
+            className="experience-stage"
+            role="tabpanel"
+            aria-live="polite"
+          >
             <div className="experience-heading">
               <div>
                 <p className="eyebrow">{activeCompany.signal}</p>
@@ -495,7 +501,7 @@ export default function Home() {
             ))}
           </div>
 
-          <article id="skill-spotlight" className="skill-spotlight" role="tabpanel">
+          <article id="skill-spotlight" className="skill-spotlight" role="tabpanel" aria-live="polite">
             <p className="eyebrow">Selected category</p>
             <h3>{activeSkillGroup.title}</h3>
             <p>{activeSkillGroup.summary}</p>
