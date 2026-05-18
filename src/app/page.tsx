@@ -55,33 +55,6 @@ const availabilityGroups = [
   },
 ];
 
-const roleFitCards = [
-  {
-    title: "Backend Engineer",
-    detail:
-      "Strongest fit for API development, backend architecture, background work, databases, and production ownership.",
-    cues: ["Golang", "Node.js", "NestJS", "Laravel", "REST APIs", "Queues"],
-  },
-  {
-    title: "Backend Engineer with UI Range",
-    detail:
-      "Can deliver React, Next.js, WordPress, and publishing UI work when needed, while keeping core depth in backend systems.",
-    cues: ["Backend-first", "React when needed", "Next.js when needed", "WordPress", "Laravel", "MySQL"],
-  },
-  {
-    title: "Integrations Engineer",
-    detail:
-      "Useful where payments, business platforms, legal tools, and AI APIs need to talk to product workflows.",
-    cues: ["Stripe", "PayKickstart", "Zoho", "Clio", "OpenAI", "Gemini"],
-  },
-  {
-    title: "Cloud-Ready Developer",
-    detail:
-      "Practical deployment experience across AWS services, Docker, Linux access, monitoring, and production fixes.",
-    cues: ["AWS", "Docker", "Sentry", "Linux/SSH", "CloudFront", "Route53"],
-  },
-];
-
 const companyExperience = [
   {
     id: "alphasquad",
@@ -258,7 +231,7 @@ const whyMePoints = [
   {
     title: "I do not stop at writing endpoints.",
     detail:
-      "Most of my useful work has been around the whole backend path: API shape, database choices, background jobs, deployment, monitoring, and fixing what breaks after release.",
+      "Most of my work sits around the whole backend path: API shape, database choices, background jobs, deployment, monitoring, and fixing what breaks after release.",
   },
   {
     title: "I am comfortable with messy real-world systems.",
@@ -281,7 +254,7 @@ const whyMePoints = [
       "I have used Claude Code, Codex, Cursor, Windsurf, Copilot, and LLM APIs to speed up debugging, documentation, and repetitive work while still owning the decisions.",
   },
   {
-    title: "I care about staying useful after launch.",
+    title: "I care about what happens after launch.",
     detail:
       "Deployment, post-deployment fixes, alert monitoring, performance work, and maintenance are not side tasks to me. That is where a lot of trust is built.",
   },
@@ -415,26 +388,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="content-section role-fit-section">
-        <div className="section-kicker">
-          <p className="eyebrow">Role fit</p>
-          <h2>Where Hassan is most useful.</h2>
-        </div>
-        <div className="role-fit-grid">
-          {roleFitCards.map((role) => (
-            <article key={role.title}>
-              <h3>{role.title}</h3>
-              <p>{role.detail}</p>
-              <div>
-                {role.cues.map((cue) => (
-                  <span key={cue}>{cue}</span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section id="experience" className="content-section">
         <div className="section-kicker">
           <p className="eyebrow">Experience</p>
@@ -555,7 +508,7 @@ export default function Home() {
       <section id="why-me" className="content-section why-me-section">
         <div className="section-kicker">
           <p className="eyebrow">Why me?</p>
-          <h2>Because I am useful where backend work gets real.</h2>
+          <h2>Because I stay close to the parts of software that actually break.</h2>
         </div>
         <div className="why-me-list">
           {whyMePoints.map((point) => (
@@ -574,7 +527,7 @@ export default function Home() {
           <p>
             Send the role, the stack, and what needs shipping. I can talk through API
             design, system shape, integrations, deployment, support expectations, and
-            where I can be useful fastest.
+            where I can contribute fastest.
           </p>
         </div>
         <div className="contact-actions">
