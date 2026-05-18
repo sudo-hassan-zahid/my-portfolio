@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 
 const cvHref = "/Hassan_Zahid_CV.pdf";
+const githubHref = "https://github.com/sudo-hassan-zahid";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -310,6 +311,9 @@ export default function Home() {
             <a className="secondary-action" href="mailto:hassanisavailable@gmail.com">
               Email Hassan
             </a>
+            <a className="secondary-action" href={githubHref} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
           </div>
           <div className="stat-strip" aria-label="Profile quick facts">
             {quickStats.map((stat) => (
@@ -337,6 +341,12 @@ export default function Home() {
           <div className="availability-row">
             <span>Phone</span>
             <a href="tel:+923211946159">+92 321 1946159</a>
+          </div>
+          <div className="availability-row">
+            <span>GitHub</span>
+            <a href={githubHref} target="_blank" rel="noreferrer">
+              sudo-hassan-zahid
+            </a>
           </div>
           <div className="availability-row">
             <span>Availability</span>
@@ -536,6 +546,9 @@ export default function Home() {
           </a>
           <a className="secondary-action" href="tel:+923211946159">
             +92 321 1946159
+          </a>
+          <a className="secondary-action" href={githubHref} target="_blank" rel="noreferrer">
+            GitHub: sudo-hassan-zahid
           </a>
           <a className="secondary-action" href={cvHref} download>
             Download CV PDF

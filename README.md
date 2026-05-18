@@ -71,6 +71,7 @@ The site currently includes:
 - Rawalpindi, Pakistan
 - `hassanisavailable@gmail.com`
 - `+92 321 1946159`
+- `https://github.com/sudo-hassan-zahid`
 - Professional experience from AlphaSquad and Viral Webbs
 
 ## Notes
