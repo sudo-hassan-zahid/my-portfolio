@@ -260,7 +260,7 @@ const softSkillGroups = [
   },
 ];
 
-const recruiterSignals = [
+const profileSignals = [
   "Backend engineer who can deliver React and Next.js UI work when the project needs it.",
   "Has worked directly with production systems, cloud infrastructure, and multi-tenant legacy risk.",
   "Comfortable using AI tools as leverage while still owning architecture and code quality.",
@@ -318,9 +318,9 @@ export default function Home() {
             engineering workflows. I can handle React and Next.js UI work when the product
             needs it, but my deepest lane is backend engineering.
           </p>
-          <div className="hero-actions" aria-label="Recruiter actions">
+          <div className="hero-actions" aria-label="Profile actions">
             <a className="primary-action" href={cvHref} download>
-              Download professional CV
+              Download CV
             </a>
             <a className="secondary-action" href="#experience">
               Review experience
@@ -339,9 +339,9 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="recruiter-panel" aria-label="Recruiter brief">
+        <aside className="profile-panel" aria-label="Profile brief">
           <div className="panel-topline">
-            <span>Recruiter scan</span>
+            <span>Profile snapshot</span>
             <strong>Open</strong>
           </div>
           <div className="availability-row">
@@ -369,7 +369,7 @@ export default function Home() {
 
       <section id="about" className="content-section">
         <div className="section-kicker">
-          <p className="eyebrow">What recruiters should notice</p>
+          <p className="eyebrow">About the work</p>
           <h2>More signal, less noise.</h2>
         </div>
         <div className="proof-grid">
@@ -481,7 +481,7 @@ export default function Home() {
       <section id="skills" className="content-section">
         <div className="section-kicker">
           <p className="eyebrow">Overall skills</p>
-          <h2>Grouped for fast recruiter scanning.</h2>
+          <h2>Grouped for fast scanning.</h2>
         </div>
 
         <div className="skill-command">
@@ -545,13 +545,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="content-section recruiter-section">
+      <section className="content-section signal-section">
         <div className="section-kicker">
-          <p className="eyebrow">Hiring signal</p>
-          <h2>Why this profile is worth a call.</h2>
+          <p className="eyebrow">Profile signal</p>
+          <h2>How I tend to be useful.</h2>
         </div>
         <div className="signal-list">
-          {recruiterSignals.map((signal) => (
+          {profileSignals.map((signal) => (
             <p key={signal}>{signal}</p>
           ))}
         </div>

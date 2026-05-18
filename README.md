@@ -14,13 +14,13 @@ This project presents Hassan Zahid as a backend-focused software engineer with e
 
 ## Sections Included
 
-- Recruiter-focused hero with CV download actions
-- Proof-point section for fast hiring signal
+- Personal hero with CV download actions
+- Proof-point section for fast profile signal
 - Role-fit section for backend, UI-capable backend, integrations, and cloud-ready roles
 - Interactive company-to-company experience and skill map
 - Categorized technical skill spotlight and accordions
 - Categorized soft skills
-- Hiring signal section
+- Profile signal section
 - Contact section with email, phone, and professional CV download
 
 ## Local Development
@@ -49,7 +49,7 @@ Most portfolio content lives in [src/app/page.tsx](src/app/page.tsx).
 You can update:
 
 - Headline and summary text
-- Recruiter hero copy
+- Personal hero copy
 - Role-fit cards
 - Experience entries and company-specific skill categories
 - Overall technical skill groups
@@ -60,7 +60,7 @@ Global styles and theme customization live in [src/app/globals.css](src/app/glob
 
 Site metadata such as page title and description live in [src/app/layout.tsx](src/app/layout.tsx).
 
-The downloadable recruiter CV is served from [public/Hassan_Zahid_CV.pdf](public/Hassan_Zahid_CV.pdf).
+The downloadable CV is served from [public/Hassan_Zahid_CV.pdf](public/Hassan_Zahid_CV.pdf).
 
 ## Current Profile Data
 
@@ -75,6 +75,6 @@ The site currently includes:
 ## Notes
 
 - The original resume files remain in the project root.
-- The public PDF copy is used for recruiter downloads.
+- The public PDF copy is used for CV downloads.
 - The portfolio content was adapted from the resume into the site UI.
 - The project has been verified with both `npm run lint` and `npm run build`.

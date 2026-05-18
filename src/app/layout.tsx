@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Hassan Zahid | Backend-Focused Software Engineer",
   description:
-    "Recruiter-focused portfolio for Hassan Zahid, a backend-focused software engineer working across APIs, cloud infrastructure, integrations, databases, and production systems with practical UI delivery range.",
+    "Personal portfolio for Hassan Zahid, a backend-focused software engineer working across APIs, cloud infrastructure, integrations, databases, and production systems with practical UI delivery range.",
   authors: [{ name: "Hassan Zahid" }],
   keywords: [
     "Hassan Zahid",

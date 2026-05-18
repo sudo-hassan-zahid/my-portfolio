@@ -306,7 +306,7 @@ a {
   line-height: 1.45;
 }
 
-.recruiter-panel {
+.profile-panel {
   display: grid;
   gap: 16px;
   border: 1px solid rgba(248, 250, 242, 0.12);
@@ -815,19 +815,19 @@ a {
   margin-top: 16px;
 }
 
-.recruiter-section {
+.signal-section {
   display: grid;
   grid-template-columns: 0.46fr 0.54fr;
   gap: 24px;
   align-items: start;
 }
 
-.recruiter-section .section-kicker {
+.signal-section .section-kicker {
   display: block;
   margin-bottom: 0;
 }
 
-.recruiter-section .section-kicker h2 {
+.signal-section .section-kicker h2 {
   margin-top: 12px;
 }
 
@@ -902,7 +902,7 @@ a {
 
   .hero-section,
   .experience-grid,
-  .recruiter-section,
+  .signal-section,
   .contact-section {
     grid-template-columns: 1fr;
   }
