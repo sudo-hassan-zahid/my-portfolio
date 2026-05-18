@@ -13,9 +13,20 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Hassan Zahid | Portfolio",
+  title: "Hassan Zahid | Backend-Focused Full-Stack Developer",
   description:
-    "Portfolio website for Hassan Zahid featuring projects, skills, experience, and contact details.",
+    "Recruiter-focused portfolio for Hassan Zahid, a backend-focused full-stack developer working across APIs, cloud infrastructure, integrations, databases, and production systems.",
+  authors: [{ name: "Hassan Zahid" }],
+  keywords: [
+    "Hassan Zahid",
+    "Backend Engineer",
+    "Full-Stack Developer",
+    "Golang",
+    "Laravel",
+    "Node.js",
+    "React",
+    "AWS",
+  ],
 };
 
 export default function RootLayout({
