@@ -1,8 +1,6 @@
-# Hassan Zahid Portfolio
+# Portfolio Project
 
-Personal portfolio website built with Next.js, React, TypeScript, and Tailwind CSS.
-
-This project presents Hassan Zahid as a backend-focused software engineer with experience across scalable applications, APIs, cloud infrastructure, integrations, databases, publishing workflows, production support, and practical UI delivery when needed.
+A personal portfolio project built with a modern React and Next.js stack. It presents a single-page portfolio with sections for a hero summary, availability, experience, skills, work style, and contact actions.
 
 ## Stack
 
@@ -12,18 +10,13 @@ This project presents Hassan Zahid as a backend-focused software engineer with e
 - Tailwind CSS 4
 - ESLint
 
-## Sections Included
+## Getting Started
 
-- Personal hero with CV download actions
-- Availability section for remote, freelance, full-time, part-time, contract, and project-based work
-- Proof-point section for fast profile signal
-- Expanded company-to-company experience and skill map
-- Categorized technical skill spotlight and accordions
-- Categorized soft skills
-- Why me section with grounded profile strengths
-- Contact section with email, phone, and professional CV download
+Install dependencies:
 
-## Local Development
+```bash
+npm install
+```
 
 Run the development server:
 
@@ -33,7 +26,7 @@ npm run dev
 
 Open `http://localhost:3000` in your browser.
 
-## Available Scripts
+## Scripts
 
 ```bash
 npm run dev
@@ -42,41 +35,29 @@ npm run start
 npm run lint
 ```
 
-## Content Editing
+## Project Structure
 
-Most portfolio content lives in [src/app/page.tsx](src/app/page.tsx).
+- `src/app/page.tsx` contains the page content and section data.
+- `src/app/globals.css` contains the global styling and theme tokens.
+- `src/app/layout.tsx` contains app metadata, fonts, and layout setup.
+- `public/` contains static assets served by the app.
 
-You can update:
+## Editing Content
 
-- Headline and summary text
-- Personal hero copy
-- Availability options
-- Experience entries and company-specific skill categories
-- Overall technical skill groups
-- Soft skill groups
-- Why me points
-- Contact information
+Most portfolio text is stored as arrays and constants in `src/app/page.tsx`. Update those values to change the hero copy, availability cards, experience entries, skill groups, work-style points, and contact actions.
 
-Global styles and theme customization live in [src/app/globals.css](src/app/globals.css).
+Theme colors, spacing, cards, buttons, and responsive behavior live in `src/app/globals.css`.
 
-Site metadata such as page title and description live in [src/app/layout.tsx](src/app/layout.tsx).
+## Build
 
-The downloadable CV is served from [public/Hassan_Zahid_CV.pdf](public/Hassan_Zahid_CV.pdf).
+Create a production build:
 
-## Current Profile Data
+```bash
+npm run build
+```
 
-The site currently includes:
+Start the production server after building:
 
-- Hassan Zahid
-- Rawalpindi, Pakistan
-- `hassanisavailable@gmail.com`
-- `+92 321 1946159`
-- `https://github.com/sudo-hassan-zahid`
-- Professional experience from AlphaSquad and Viral Webbs
-
-## Notes
-
-- The original resume files remain in the project root.
-- The public PDF copy is used for CV downloads.
-- The portfolio content was adapted from the resume into the site UI.
-- The project has been verified with both `npm run lint` and `npm run build`.
+```bash
+npm run start
+```

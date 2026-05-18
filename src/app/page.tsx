@@ -15,9 +15,9 @@ const navItems = [
 ];
 
 const quickStats = [
-  { value: "Backend-first", label: "software engineering with practical UI delivery" },
-  { value: "2", label: "recent software roles mapped by company and skill area" },
-  { value: "End-to-end", label: "architecture, deployment, monitoring, support" },
+  { value: "Backend-first", label: "APIs, data, jobs, cloud, and support" },
+  { value: "2", label: "recent software roles across product and publishing systems" },
+  { value: "End-to-end", label: "from architecture to deployment and fixes" },
 ];
 
 const proofPoints = [
@@ -230,32 +230,32 @@ const softSkillGroups = [
 
 const whyMePoints = [
   {
-    title: "I do not stop at writing endpoints.",
+    title: "Beyond endpoints",
     detail:
       "Most of my work sits around the whole backend path: API shape, database choices, background jobs, deployment, monitoring, and fixing what breaks after release.",
   },
   {
-    title: "I am comfortable with messy real-world systems.",
+    title: "Legacy-system care",
     detail:
       "I have worked on legacy multi-tenant PHP systems, publishing workflows, client projects, payment flows, and production issues where small backend changes need care.",
   },
   {
-    title: "I can move from idea to working proof quickly.",
+    title: "Fast proof of concept",
     detail:
       "POCs, rapid feature experiments, integrations, and AI-assisted workflows are part of how I validate direction without pretending prototypes are finished architecture.",
   },
   {
-    title: "I communicate across the actual project surface.",
+    title: "Clear project context",
     detail:
       "I can talk through APIs, databases, AWS, Docker, Sentry, third-party integrations, and enough UI delivery to keep backend work connected to the product.",
   },
   {
-    title: "I use AI tools as leverage, not as a replacement for judgment.",
+    title: "AI with judgment",
     detail:
       "I have used Claude Code, Codex, Cursor, Windsurf, Copilot, and LLM APIs to speed up debugging, documentation, and repetitive work while still owning the decisions.",
   },
   {
-    title: "I care about what happens after launch.",
+    title: "After-launch care",
     detail:
       "Deployment, post-deployment fixes, alert monitoring, performance work, and maintenance are not side tasks to me. That is where a lot of trust is built.",
   },
@@ -295,8 +295,8 @@ export default function Home() {
 
       <section id="top" className="hero-section">
         <div className="hero-copy">
-          <p className="eyebrow">Available for freelance and full-time roles</p>
-          <h1>Backend systems, product delivery, and production ownership.</h1>
+          <p className="eyebrow">Open to remote work</p>
+          <h1>Backend systems that ship.</h1>
           <p className="hero-lede">
             I build scalable applications, APIs, integrations, and deployment-ready systems
             with Golang, Laravel, Node.js, databases, AWS, Docker, and AI-assisted
@@ -311,7 +311,7 @@ export default function Home() {
               Review experience
             </a>
             <a className="secondary-action" href="mailto:hassanisavailable@gmail.com">
-              Email Hassan
+              Email me
             </a>
             <a className="secondary-action" href={githubHref} target="_blank" rel="noreferrer">
               GitHub
@@ -359,16 +359,13 @@ export default function Home() {
               <span key={node}>{node}</span>
             ))}
           </div>
-          <a className="panel-download" href={cvHref} download>
-            Download CV PDF
-          </a>
         </aside>
       </section>
 
       <section id="availability" className="content-section availability-section">
         <div className="section-kicker">
           <p className="eyebrow">Availability</p>
-          <h2>Open to remote and flexible backend-focused work.</h2>
+          <h2>Remote backend work, flexible by scope.</h2>
         </div>
         <div className="availability-grid">
           {availabilityGroups.map((group) => (
@@ -387,8 +384,8 @@ export default function Home() {
 
       <section id="about" className="content-section">
         <div className="section-kicker">
-          <p className="eyebrow">About the work</p>
-          <h2>More signal, less noise.</h2>
+          <p className="eyebrow">Proof points</p>
+          <h2>Practical systems work.</h2>
         </div>
         <div className="proof-grid">
           {proofPoints.map((point) => (
@@ -403,7 +400,7 @@ export default function Home() {
       <section id="experience" className="content-section">
         <div className="section-kicker">
           <p className="eyebrow">Experience</p>
-          <h2>Where I have built and owned real systems.</h2>
+          <h2>Systems I have built and supported.</h2>
         </div>
 
         <div className="experience-list">
@@ -415,19 +412,21 @@ export default function Home() {
                     <h3>
                       {item.role} at {item.company}
                     </h3>
-                    <span>
-                      {item.location} | {item.period}
+                    <span className="experience-meta">
+                      <span>{item.location}</span>
+                      <span className="meta-separator" aria-hidden="true" />
+                      <span>{item.period}</span>
                     </span>
                   </div>
                 </div>
 
                 <p className="experience-overview">{item.overview}</p>
 
-                <div className="achievement-list">
+                <ul className="achievement-list">
                   {item.achievements.map((achievement) => (
-                    <p key={achievement}>{achievement}</p>
+                    <li key={achievement}>{achievement}</li>
                   ))}
-                </div>
+                </ul>
 
                 <div className="company-skill-grid">
                   {item.categories.map((category) => (
@@ -454,7 +453,7 @@ export default function Home() {
 
       <section id="skills" className="content-section">
         <div className="section-kicker">
-          <p className="eyebrow">Overall skills</p>
+          <p className="eyebrow">Skills</p>
           <h2>Grouped for fast scanning.</h2>
         </div>
 
@@ -520,7 +519,7 @@ export default function Home() {
       <section id="why-me" className="content-section why-me-section">
         <div className="section-kicker">
           <p className="eyebrow">Why me?</p>
-          <h2>Because I stay close to the parts of software that actually break.</h2>
+          <h2>How I stay useful after launch.</h2>
         </div>
         <div className="why-me-list">
           {whyMePoints.map((point) => (
@@ -535,7 +534,7 @@ export default function Home() {
       <section id="contact" className="contact-section">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2>Need someone who can own the backend and still care about the product?</h2>
+          <h2>Discuss backend work.</h2>
           <p>
             Send the role, the stack, and what needs shipping. I can talk through API
             design, system shape, integrations, deployment, support expectations, and
