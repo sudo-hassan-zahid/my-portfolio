@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
+  ArrowUpRight,
   BookOpen,
   Brain,
   CheckCircle2,
@@ -680,8 +681,11 @@ export default function Home() {
               </span>
               GitHub
             </span>
-            <a href={githubHref} target="_blank" rel="noreferrer">
+            <a className="profile-external-link" href={githubHref} target="_blank" rel="noreferrer">
               sudo-hassan-zahid
+              <span className="external-link-icon" aria-hidden="true">
+                <ArrowUpRight size={14} strokeWidth={2.6} />
+              </span>
             </a>
           </div>
           <div className="availability-row">
@@ -894,13 +898,12 @@ export default function Home() {
           </div>
         </div>
         <div className="why-me-list">
-          {whyMePoints.map((point, index) => {
+          {whyMePoints.map((point) => {
             const PointIcon = point.icon;
 
             return (
               <article key={point.title}>
                 <div className="why-me-card-top">
-                  <span className="why-index">{String(index + 1).padStart(2, "0")}</span>
                   <span className="why-icon" aria-hidden="true">
                     <PointIcon size={20} strokeWidth={2.4} />
                   </span>
@@ -942,6 +945,9 @@ export default function Home() {
               <GitBranch size={18} strokeWidth={2.4} />
             </span>
             GitHub: sudo-hassan-zahid
+            <span className="button-icon" aria-hidden="true">
+              <ArrowUpRight size={17} strokeWidth={2.4} />
+            </span>
           </a>
           <a className="secondary-action" href={cvHref} download>
             <span className="button-icon" aria-hidden="true">

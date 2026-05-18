@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #edf1e8;
+  --background: #dfe7d8;
   --foreground: #151814;
   --muted: #657066;
   --surface: #f9f7ee;
-  --surface-muted: #e0e8d9;
+  --surface-muted: #d5dfcd;
   --line: rgba(21, 24, 20, 0.12);
   --line-strong: rgba(21, 24, 20, 0.22);
   --accent: #0f766e;
@@ -36,8 +36,8 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(180deg, rgba(237, 241, 232, 0.98), rgba(224, 234, 221, 0.96) 46%, #edf1e8),
-    repeating-linear-gradient(90deg, rgba(21, 24, 20, 0.045) 0 1px, transparent 1px 104px);
+    linear-gradient(180deg, rgba(223, 231, 216, 0.98), rgba(211, 224, 205, 0.96) 46%, #dfe7d8),
+    repeating-linear-gradient(90deg, rgba(21, 24, 20, 0.055) 0 1px, transparent 1px 104px);
   color: var(--foreground);
   font-family: var(--font-manrope), Arial, sans-serif;
 }
@@ -68,8 +68,8 @@ a {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(rgba(21, 24, 20, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(21, 24, 20, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(21, 24, 20, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 24, 20, 0.045) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: linear-gradient(180deg, black, transparent 76%);
 }
@@ -93,10 +93,12 @@ a {
   gap: 18px;
   align-items: center;
   padding: 10px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(19, 78, 74, 0.2);
   border-radius: 8px;
-  background: rgba(249, 247, 238, 0.9);
-  box-shadow: 0 12px 30px rgba(20, 35, 31, 0.08);
+  background:
+    linear-gradient(180deg, rgba(226, 234, 219, 0.96), rgba(213, 224, 205, 0.94)),
+    var(--surface-muted);
+  box-shadow: 0 14px 34px rgba(20, 35, 31, 0.14);
   backdrop-filter: blur(16px);
 }
 
@@ -208,6 +210,7 @@ a {
 .button-icon,
 .row-icon,
 .chip-icon,
+.external-link-icon,
 .spotlight-icon,
 .why-icon {
   display: inline-grid;
@@ -224,6 +227,7 @@ a {
 .button-icon svg,
 .row-icon svg,
 .chip-icon svg,
+.external-link-icon svg,
 .spotlight-icon svg,
 .why-icon svg {
   display: block;
@@ -461,6 +465,32 @@ a {
   font-size: 0.94rem;
   font-weight: 800;
   overflow-wrap: anywhere;
+}
+
+.profile-external-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  border-radius: 8px;
+  color: #ccfbf1;
+  text-decoration: underline;
+  text-decoration-color: rgba(153, 246, 228, 0.42);
+  text-underline-offset: 4px;
+}
+
+.profile-external-link:hover,
+.profile-external-link:focus-visible {
+  color: #99f6e4;
+  text-decoration-color: currentColor;
+}
+
+.external-link-icon {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(153, 246, 228, 0.24);
+  border-radius: 6px;
+  background: rgba(153, 246, 228, 0.08);
 }
 
 .system-map {
@@ -963,25 +993,15 @@ a {
 .why-me-card-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
-.why-index,
 .why-icon {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
-}
-
-.why-index {
-  border: 1px solid rgba(15, 118, 110, 0.16);
-  background: rgba(15, 118, 110, 0.08);
-  color: var(--accent-strong);
-  font-family: var(--font-space-grotesk), Arial, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 900;
 }
 
 .why-icon {
