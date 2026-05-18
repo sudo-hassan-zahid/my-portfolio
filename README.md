@@ -2,7 +2,7 @@
 
 Personal portfolio website built with Next.js, React, TypeScript, and Tailwind CSS.
 
-This project presents Hassan Zahid as a backend-focused full-stack developer with experience across scalable applications, APIs, cloud infrastructure, and modern web development.
+This project presents Hassan Zahid as a backend-focused full-stack developer with experience across scalable applications, APIs, cloud infrastructure, integrations, databases, publishing workflows, and production support.
 
 ## Stack
 
@@ -14,11 +14,14 @@ This project presents Hassan Zahid as a backend-focused full-stack developer wit
 
 ## Sections Included
 
-- Hero section with professional summary
-- About section
-- Experience section
-- Skills section
-- Contact section
+- Recruiter-focused hero with CV download actions
+- Proof-point section for fast hiring signal
+- Role-fit section for backend, full-stack, integrations, and cloud-ready roles
+- Interactive company-to-company experience and skill map
+- Categorized technical skill spotlight and accordions
+- Categorized soft skills
+- Hiring signal section
+- Contact section with email, phone, and professional CV download
 
 ## Local Development
 
@@ -46,13 +49,18 @@ Most portfolio content lives in [src/app/page.tsx](src/app/page.tsx).
 You can update:
 
 - Headline and summary text
-- Experience entries
-- Skills list
+- Recruiter hero copy
+- Role-fit cards
+- Experience entries and company-specific skill categories
+- Overall technical skill groups
+- Soft skill groups
 - Contact information
 
 Global styles and theme customization live in [src/app/globals.css](src/app/globals.css).
 
 Site metadata such as page title and description live in [src/app/layout.tsx](src/app/layout.tsx).
+
+The downloadable recruiter CV is served from [public/Hassan_Zahid_CV.pdf](public/Hassan_Zahid_CV.pdf).
 
 ## Current Profile Data
 
@@ -66,6 +74,7 @@ The site currently includes:
 
 ## Notes
 
-- The original resume file `Hassan_Zahid.docx` remains in the project root.
-- The portfolio content was adapted from that resume into the site UI.
+- The original resume files remain in the project root.
+- The public PDF copy is used for recruiter downloads.
+- The portfolio content was adapted from the resume into the site UI.
 - The project has been verified with both `npm run lint` and `npm run build`.
