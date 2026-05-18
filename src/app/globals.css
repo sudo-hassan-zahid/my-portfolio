@@ -517,63 +517,9 @@ a {
   margin-top: 20px;
 }
 
-.experience-grid {
+.experience-list {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
   gap: 18px;
-  align-items: start;
-}
-
-.company-switcher {
-  position: sticky;
-  top: 92px;
-  display: grid;
-  gap: 10px;
-}
-
-.company-switcher button {
-  width: 100%;
-  cursor: pointer;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255, 253, 247, 0.78);
-  padding: 16px;
-  text-align: left;
-  transition:
-    transform 180ms ease,
-    background 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease;
-}
-
-.company-switcher button:hover,
-.company-switcher button:focus-visible {
-  transform: translateX(4px);
-  border-color: rgba(15, 118, 110, 0.34);
-}
-
-.company-switcher button.active {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
-  color: var(--panel-text);
-}
-
-.company-switcher span,
-.company-switcher small {
-  display: block;
-}
-
-.company-switcher span {
-  font-family: var(--font-space-grotesk), Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-.company-switcher small {
-  margin-top: 8px;
-  color: currentColor;
-  opacity: 0.68;
-  font-size: 0.78rem;
 }
 
 .experience-stage {
@@ -934,7 +880,6 @@ a {
   }
 
   .hero-section,
-  .experience-grid,
   .signal-section,
   .contact-section {
     grid-template-columns: 1fr;
@@ -955,11 +900,6 @@ a {
   .soft-skill-board,
   .signal-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .company-switcher {
-    position: static;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .contact-section {
@@ -1014,8 +954,7 @@ a {
   .company-skill-grid,
   .skill-matrix,
   .soft-skill-board,
-  .signal-list,
-  .company-switcher {
+  .signal-list {
     grid-template-columns: 1fr;
   }
 

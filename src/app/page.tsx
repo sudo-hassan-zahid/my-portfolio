@@ -250,22 +250,11 @@ const profileSignals = [
 ];
 
 export default function Home() {
-  const [activeCompanyId, setActiveCompanyId] = useState(companyExperience[0].id);
   const [activeSkillTitle, setActiveSkillTitle] = useState(skillGroups[0].title);
-
-  const activeCompany = useMemo(
-    () => companyExperience.find((item) => item.id === activeCompanyId) ?? companyExperience[0],
-    [activeCompanyId],
-  );
 
   const activeSkillGroup = useMemo(
     () => skillGroups.find((group) => group.title === activeSkillTitle) ?? skillGroups[0],
     [activeSkillTitle],
-  );
-
-  const activeSkillCount = activeCompany.categories.reduce(
-    (total, category) => total + category.skills.length,
-    0,
   );
 
   return (
@@ -414,73 +403,60 @@ export default function Home() {
           <h2>Experience you can inspect.</h2>
         </div>
 
-        <div className="experience-grid">
-          <div className="company-switcher" role="tablist" aria-label="Company experience">
-            {companyExperience.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                role="tab"
-                aria-selected={activeCompany.id === item.id}
-                aria-controls="company-experience-panel"
-                className={activeCompany.id === item.id ? "active" : ""}
-                onClick={() => setActiveCompanyId(item.id)}
-              >
-                <span>{item.company}</span>
-                <small>{item.period}</small>
-              </button>
-            ))}
-          </div>
+        <div className="experience-list">
+          {companyExperience.map((item) => {
+            const roleSkillCount = item.categories.reduce(
+              (total, category) => total + category.skills.length,
+              0,
+            );
 
-          <article
-            id="company-experience-panel"
-            className="experience-stage"
-            role="tabpanel"
-            aria-live="polite"
-          >
-            <div className="experience-heading">
-              <div>
-                <p className="eyebrow">{activeCompany.signal}</p>
-                <h3>
-                  {activeCompany.role} at {activeCompany.company}
-                </h3>
-                <span>
-                  {activeCompany.location} | {activeCompany.period}
-                </span>
-              </div>
-              <div className="skill-count">
-                <strong>{activeSkillCount}</strong>
-                <span>role-linked skills</span>
-              </div>
-            </div>
-
-            <p className="experience-overview">{activeCompany.overview}</p>
-
-            <div className="achievement-list">
-              {activeCompany.achievements.map((achievement) => (
-                <p key={achievement}>{achievement}</p>
-              ))}
-            </div>
-
-            <div className="company-skill-grid">
-              {activeCompany.categories.map((category) => (
-                <div key={category.title} className="skill-column">
-                  <h4>{category.title}</h4>
+            return (
+              <article key={item.id} className="experience-stage">
+                <div className="experience-heading">
                   <div>
-                    {category.skills.map((skill) => (
-                      <span key={skill}>{skill}</span>
-                    ))}
+                    <p className="eyebrow">{item.signal}</p>
+                    <h3>
+                      {item.role} at {item.company}
+                    </h3>
+                    <span>
+                      {item.location} | {item.period}
+                    </span>
+                  </div>
+                  <div className="skill-count">
+                    <strong>{roleSkillCount}</strong>
+                    <span>role-linked skills</span>
                   </div>
                 </div>
-              ))}
-            </div>
 
-            <div className="soft-row" aria-label={`${activeCompany.company} soft skills`}>
-              {activeCompany.softSkills.map((skill) => (
-                <span key={skill}>{skill}</span>
-              ))}
-            </div>
-          </article>
+                <p className="experience-overview">{item.overview}</p>
+
+                <div className="achievement-list">
+                  {item.achievements.map((achievement) => (
+                    <p key={achievement}>{achievement}</p>
+                  ))}
+                </div>
+
+                <div className="company-skill-grid">
+                  {item.categories.map((category) => (
+                    <div key={category.title} className="skill-column">
+                      <h4>{category.title}</h4>
+                      <div>
+                        {category.skills.map((skill) => (
+                          <span key={skill}>{skill}</span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="soft-row" aria-label={`${item.company} soft skills`}>
+                  {item.softSkills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -521,8 +497,8 @@ export default function Home() {
         </div>
 
         <div className="skill-matrix">
-          {skillGroups.map((group, index) => (
-            <details key={group.title} className="skill-accordion" open={index < 3}>
+          {skillGroups.map((group) => (
+            <details key={group.title} className="skill-accordion" open>
               <summary>
                 <span>{group.title}</span>
                 <small>{group.skills.length} skills</small>

@@ -18,7 +18,7 @@ This project presents Hassan Zahid as a backend-focused software engineer with e
 - Availability section for remote, freelance, full-time, part-time, contract, and project-based work
 - Proof-point section for fast profile signal
 - Role-fit section for backend, UI-capable backend, integrations, and cloud-ready roles
-- Interactive company-to-company experience and skill map
+- Expanded company-to-company experience and skill map
 - Categorized technical skill spotlight and accordions
 - Categorized soft skills
 - Profile signal section
