@@ -93,10 +93,19 @@ const companyExperience = [
       "Backend-centered product engineering across multiple client projects, owning architecture, deployments, integrations, and production stability.",
     achievements: [
       "Built and maintained scalable applications using Golang, Node.js, NestJS, Laravel, React, and Next.js.",
+      "Handled multiple projects simultaneously from development to deployment, collaborating directly with clients and internal teams.",
+      "Worked both independently as a solo backend engineer and collaboratively with Senior and Lead Software Engineers.",
+      "Designed and optimized solutions using MySQL, PostgreSQL, MongoDB, Redis, Firebase, and Supabase.",
       "Designed RESTful APIs and integrated third-party platforms including Stripe, PayKickstart, Zoho, Clio, OpenAI, and Gemini APIs.",
-      "Moved heavy PDF, AI/LLM, and background workloads out of an ElectronJS app into scalable backend services using Golang async queues and Node.js BullMQ.",
-      "Managed AWS infrastructure across EC2, S3, SES, CloudFront, Route53, SNS, plus deployments, Sentry monitoring, and production fixes.",
+      "Integrated payment systems including Stripe and PayKickstart for subscription and transaction workflows.",
+      "Optimized application performance by migrating heavy processing tasks including PDF generation, AI/LLM operations, and background workloads from an ElectronJS application to scalable backend services using Golang asynq and Node.js BullMQ job queues.",
       "Worked on legacy multi-tenant PHP systems where platform-wide changes could affect multiple clients and customer workflows.",
+      "Developed proof-of-concept applications to validate client ideas, rapid feature experimentation, and business workflows.",
+      "Used AI-assisted development workflows and experimented with Claude Code, Codex, Cursor, Windsurf, Copilot, and other LLM-powered environments to accelerate development, prototyping, debugging, documentation, and repetitive engineering tasks.",
+      "Managed deployments and AWS infrastructure including EC2, S3, SES, CloudFront, Route53, SNS, and monitored AWS alert systems.",
+      "Containerized applications using Docker to streamline development and deployment workflows.",
+      "Managed deployments, post-deployment issue resolution, Sentry monitoring, and critical bug fixes across staging and production environments.",
+      "Owned backend systems across multiple projects, handling architecture, deployments, production stability, and ongoing maintenance end-to-end.",
     ],
     categories: [
       {
@@ -136,9 +145,11 @@ const companyExperience = [
     achievements: [
       "Developed accessible EPUB publications with HTML, XHTML, and CSS for multiple e-reader platforms.",
       "Validated EPUB compliance and accessibility with Kindle Previewer, Ace by DAISY, and Thorium Reader.",
-      "Maintained internal publishing management systems used as the source of truth for book production workflows.",
-      "Built backend features with Laravel, CodeIgniter, and MySQL while maintaining responsive author websites.",
-      "Customized WordPress themes and plugins, plus handled Linux, FTP, and SSH deployment work.",
+      "Developed and maintained features for internal book production and publishing management systems used as the primary source of truth for publication workflows.",
+      "Maintained and enhanced author websites with a focus on responsiveness, usability, and performance.",
+      "Built backend features using Laravel, CodeIgniter, and MySQL.",
+      "Customized WordPress themes and plugins based on project requirements.",
+      "Managed deployments, troubleshooting, and server-side operations through Linux, FTP, and SSH environments.",
     ],
     categories: [
       {
