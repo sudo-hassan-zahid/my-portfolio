@@ -3,7 +3,6 @@
 import { useMemo, useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
-  ArrowRight,
   ArrowUpRight,
   BookOpen,
   Brain,
@@ -574,7 +573,11 @@ export default function Home() {
       <header className="site-nav">
         <a className="brand-lockup" href="#top" aria-label="Hassan Zahid home">
           <span className="brand-mark" aria-hidden="true">
-            <span>HZ</span>
+            <span className="brand-glyph">
+              <span />
+              <span />
+              <span />
+            </span>
           </span>
           <span>
             <strong>Hassan Zahid</strong>
@@ -613,12 +616,7 @@ export default function Home() {
               </span>
               Download CV
             </a>
-            <a className="secondary-action" href="#experience">
-              <span className="button-icon" aria-hidden="true">
-                <ArrowRight size={18} strokeWidth={2.4} />
-              </span>
-              Review experience
-            </a>
+
             <a className="secondary-action" href="mailto:hassanisavailable@gmail.com">
               <span className="button-icon" aria-hidden="true">
                 <Mail size={18} strokeWidth={2.4} />
