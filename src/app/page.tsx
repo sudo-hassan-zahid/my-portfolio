@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowUpRight,
@@ -44,6 +44,15 @@ type Achievement = {
   detail: string;
   note?: string;
   highlights: string[];
+};
+
+type CaseStudy = {
+  title: string;
+  summary: ReactNode;
+  stack?: string[];
+  challenge: ReactNode;
+  solution: ReactNode[];
+  results: ReactNode[];
 };
 
 type SkillGroup = {
@@ -193,6 +202,82 @@ const companyExperience = [
     signal: "Current role",
     overview:
       "Backend-centered product engineering across multiple client projects, owning architecture, deployments, integrations, and production stability.",
+    caseStudies: [
+      {
+        title: "Moved PDF generation from ElectronJS to Go queues",
+        summary:
+          <>Migrated a critical book PDF workflow from a machine-dependent <strong>ElectronJS</strong> app into a backend-controlled <strong>Go</strong> pipeline.</>,
+        stack: ["Go asynq", "chromedp", "Next.js routes", "Redis", "EC2"],
+        challenge:
+          <>Headless Chrome caused <strong>OOM failures</strong> on staging with only <code>2</code> concurrent jobs, and the original <em>React-heavy</em> HTML rendering lived inside Electron.</>,
+        solution: [
+          <>Upgraded the <code>EC2</code> machine and tuned <strong>Chrome headless memory limits</strong>, <code>Redis</code> TTLs, and server-side cleanup.</>,
+          <>Used <code>Next.js</code> server-side routes to generate backend-controlled HTML with the same rendering logic as the Electron app.</>,
+          <>Ran PDF work through <code>Go asynq</code> so failures, retries, and job state were controlled on the backend.</>,
+        ],
+        results: [
+          <>PDF generation became <strong>predictable</strong> and independent of customer machine specifications.</>,
+          <>Failed jobs became <strong>retryable</strong>, observable, and easier to support.</>,
+          <>Added <code>Slack webhook</code> notifications for generation status and failures.</>,
+          <>Improved customer trust in a book-generation workflow where PDF quality was <em>business-critical</em>.</>,
+        ],
+      },
+      {
+        title: "Shifted OpenAI and Gemini image generation to backend",
+        summary:
+          <>Moved batch image generation away from the frontend into a dedicated <strong>backend queue system</strong>.</>,
+        stack: ["OpenAI", "Gemini", "background queues", "nginx", "exponential backoff"],
+        challenge:
+          <>Frontend image generation suffered from <strong>mid-generation failures</strong>, rate limits, timeout errors, and batch disruption when a single image failed.</>,
+        solution: [
+          <>Built a <strong>non-blocking</strong>, always-running queue pipeline isolated from PDF workers.</>,
+          <>Identified <em>retriable</em> <code>OpenAI</code> and <code>Gemini</code> errors and re-queued them with better priority.</>,
+          <>Implemented <strong>exponential backoff</strong> and tuned worker, HTTP, and <code>nginx</code> timeouts up to <code>5 mins</code>.</>,
+        ],
+        results: [
+          <>Image generation became <strong>smoother</strong> and more resilient for users.</>,
+          <>Batch failures could be recovered instead of breaking the full generation flow.</>,
+          <>New image models became easier to roll out without frontend compatibility churn.</>,
+          <>Usage limits became enforceable from the <strong>backend</strong>.</>,
+        ],
+      },
+      {
+        title: "Built backend fair usage controls for LLM costs",
+        summary:
+          <>Implemented backend usage checks to prevent AI features from exceeding <strong>subscription economics</strong>.</>,
+        stack: ["LLM usage tracking", "cache", "backend limits"],
+        challenge:
+          <>Some users consumed LLM calls worth <code>10x</code>, <code>20x</code>, and even <code>50x</code> of their paid subscription cost.</>,
+        solution: [
+          <>Added backend <strong>fair usage checks</strong> before expensive LLM operations.</>,
+          <>Used <code>cache</code> and <em>in-memory</em> techniques to avoid database round trips on every small usage lookup.</>,
+          <>Handled requests based on each user&apos;s current subscription and usage state.</>,
+        ],
+        results: [
+          <>Reduced uncontrolled <strong>AI cost exposure</strong>.</>,
+          <>Made usage limits consistent across clients.</>,
+          <>Created a stronger foundation for <em>subscription-based</em> AI features.</>,
+        ],
+      },
+      {
+        title: "Delivered Swift iOS backend APIs in 10 days",
+        summary:
+          <>Planned and implemented the backend API surface for a <strong>Swift iOS</strong> app ahead of deadline.</>,
+        stack: ["REST APIs", "Firebase", "APNs", "OpenAI", "Gemini", "versioned endpoints"],
+        challenge:
+          <>The mobile app needed stable <strong>server-side handling</strong> for flows, notifications, and AI calls that were not reliable to run directly on-device.</>,
+        solution: [
+          <>Planned app flows and <strong>API contracts</strong> with the iOS developer.</>,
+          <>Built core app APIs, <code>Firebase</code> and <code>APNs</code> notification support, server-side LLM calls, and iOS-specific versioned endpoints.</>,
+          <>Used <em>AI-assisted workflows</em> for repetitive implementation work while keeping architecture and review human-owned.</>,
+        ],
+        results: [
+          <>Delivered backend work about <strong>1 week ahead</strong> of deadline.</>,
+          <>Improved mobile stability by keeping complex operations server-side.</>,
+          <>Helped the iOS developer move faster with clear backend contracts.</>,
+        ],
+      },
+    ] satisfies CaseStudy[],
     achievements: [
       {
         lead: "Built scalable apps",
@@ -770,6 +855,50 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+
+              {"caseStudies" in item && item.caseStudies?.length ? (
+                <div className="case-study-grid" aria-label={`${item.company} selected achievements`}>
+                  {item.caseStudies.map((study) => (
+                    <article key={study.title} className="case-study-card">
+                      <div className="case-study-header">
+                        <h4>{study.title}</h4>
+                        <p>{study.summary}</p>
+                      </div>
+
+                      {study.stack?.length ? (
+                        <div className="case-study-stack" aria-label={`${study.title} stack`}>
+                          {study.stack.map((tool) => (
+                            <code key={tool}>{tool}</code>
+                          ))}
+                        </div>
+                      ) : null}
+
+                      <div className="case-study-body">
+                        <div>
+                          <strong>Challenge</strong>
+                          <p>{study.challenge}</p>
+                        </div>
+                        <div>
+                          <strong>Solution</strong>
+                          <ul>
+                            {study.solution.map((point, index) => (
+                              <li key={`${study.title}-solution-${index}`}>{point}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <strong>Results</strong>
+                          <ul>
+                            {study.results.map((point, index) => (
+                              <li key={`${study.title}-result-${index}`}>{point}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ) : null}
 
               <div className="company-skill-grid">
                 {[...item.categories, { title: "Soft Skills", skills: item.softSkills }].map((category) => (

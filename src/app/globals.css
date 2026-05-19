@@ -793,6 +793,118 @@ a {
   box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
 }
 
+.case-study-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.case-study-card {
+  display: grid;
+  gap: 16px;
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 247, 0.72), rgba(232, 240, 226, 0.86)),
+    var(--surface);
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(20, 35, 31, 0.05);
+}
+
+.case-study-header h4 {
+  margin: 0;
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.case-study-header p,
+.case-study-body p,
+.case-study-body li {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.case-study-card strong {
+  color: var(--accent-strong);
+  font-weight: 900;
+}
+
+.case-study-body > div > strong {
+  display: block;
+  color: var(--foreground);
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.case-study-card em {
+  color: var(--foreground);
+  font-style: italic;
+  font-weight: 800;
+}
+
+.case-study-card p code,
+.case-study-card li code {
+  border-radius: 4px;
+  background: rgba(19, 78, 74, 0.1);
+  color: var(--accent-strong);
+  padding: 1px 4px;
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+  font-size: 0.86em;
+  font-weight: 900;
+}
+
+.case-study-header p {
+  margin: 10px 0 0;
+}
+
+.case-study-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.case-study-stack code {
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 6px;
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--accent-strong);
+  padding: 5px 7px;
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.case-study-body {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr 1fr;
+  gap: 16px;
+}
+
+.case-study-body > div {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.case-study-body p,
+.case-study-body ul {
+  margin: 8px 0 0;
+}
+
+.case-study-body ul {
+  display: grid;
+  gap: 8px;
+  padding-left: 17px;
+  list-style: disc;
+}
+
+.case-study-body li::marker {
+  color: var(--accent);
+}
+
 .company-skill-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1210,6 +1322,10 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .case-study-body {
+    grid-template-columns: 1fr;
+  }
+
   .contact-section {
     align-items: start;
   }
@@ -1258,6 +1374,7 @@ a {
   .stat-strip,
   .proof-grid,
   .availability-grid,
+  .case-study-grid,
   .company-skill-grid,
   .skill-matrix,
   .soft-skill-board,
